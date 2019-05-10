@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d317e50c8f5bfc2c0c76bd1d5bce5968",
+    "revision": "0af4a4a98b66168637300b40ac945096",
     "url": "/shrek/index.html"
   },
   {
-    "revision": "72224f5d52ed8236efa5",
+    "revision": "96b3ce4e20f7b9de3861",
     "url": "/shrek/static/css/main.37404255.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shrek/static/js/2.2b91e2f1.chunk.js"
   },
   {
-    "revision": "72224f5d52ed8236efa5",
-    "url": "/shrek/static/js/main.492e37c9.chunk.js"
+    "revision": "96b3ce4e20f7b9de3861",
+    "url": "/shrek/static/js/main.1b32608e.chunk.js"
   },
   {
     "revision": "b3204b3c0a8ffb55b607",
