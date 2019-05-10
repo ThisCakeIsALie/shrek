@@ -14,15 +14,15 @@ const App: React.FC = () => {
   }
   const [dabCounter, setDabCounter] = useState(initialCounter);
 
-  function dab() {
+  async function dab() {
     const newDabCounter = dabCounter + 1;
-    setDabCounter(newDabCounter);
-    window.localStorage.setItem('dabcounter', String(newDabCounter));
+    await setDabCounter(newDabCounter);
+    await window.localStorage.setItem('dabcounter', String(newDabCounter));
   }
 
-  function startDabbing(e: React.SyntheticEvent) {
-    setDabbing(true);
-    dab();
+  async function startDabbing(e: React.SyntheticEvent) {
+    await setDabbing(true);
+    await dab();
     e.preventDefault();
   }
 
