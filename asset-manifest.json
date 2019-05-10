@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shrek/static/css/main.37404255.chunk.css",
+    "main.css": "/shrek/static/css/main.50490c46.chunk.css",
     "main.js": "/shrek/static/js/main.1ff009f4.chunk.js",
     "main.js.map": "/shrek/static/js/main.1ff009f4.chunk.js.map",
     "runtime~main.js": "/shrek/static/js/runtime~main.36cba68e.js",
@@ -8,9 +8,9 @@
     "static/js/2.9ad5234c.chunk.js": "/shrek/static/js/2.9ad5234c.chunk.js",
     "static/js/2.9ad5234c.chunk.js.map": "/shrek/static/js/2.9ad5234c.chunk.js.map",
     "index.html": "/shrek/index.html",
-    "precache-manifest.1032931bbf2dad651f92c6c85bf11e6f.js": "/shrek/precache-manifest.1032931bbf2dad651f92c6c85bf11e6f.js",
+    "precache-manifest.e80a230402c9ddda69072c48828b619a.js": "/shrek/precache-manifest.e80a230402c9ddda69072c48828b619a.js",
     "service-worker.js": "/shrek/service-worker.js",
-    "static/css/main.37404255.chunk.css.map": "/shrek/static/css/main.37404255.chunk.css.map",
+    "static/css/main.50490c46.chunk.css.map": "/shrek/static/css/main.50490c46.chunk.css.map",
     "static/media/shrek-dab.gif": "/shrek/static/media/shrek-dab.761c33d2.gif",
     "static/media/shrek-no-dab.png": "/shrek/static/media/shrek-no-dab.0be7510d.png"
   }
