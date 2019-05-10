@@ -30,13 +30,24 @@ const App: React.FC = () => {
     setDabbing(false);
   }
 
+  let events = {};
+
+  if ('ontouchstart' in window) {
+    events = {
+      onTouchStart: startDabbing,
+      onTouchEnd: stopDabbing
+    }
+  } else {
+    events = {
+      onMouseDown: startDabbing,
+      onMouseUp: stopDabbing
+    }
+  }
+
   return (
     <div
       className="App"
-      onTouchStart={startDabbing}
-      onMouseDown={startDabbing}
-      onTouchEnd={stopDabbing}
-      onMouseUp={stopDabbing}
+      {...events}
     >
       <div className="App-image-container">
         <img
