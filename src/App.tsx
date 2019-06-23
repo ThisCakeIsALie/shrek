@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import shrekDab from "./assets/shrek-dab.gif";
 import shrekNoDab from "./assets/shrek-no-dab.png";
 import "./App.css";
-import { start } from "repl";
 
 const App: React.FC = () => {
   const [isDabbing, setDabbing] = useState(false);
+  const isTouching = useRef(false);
 
-  const savedCounter = window.localStorage.getItem('dabcounter');
+  const savedCounter = window.localStorage.getItem("dabcounter");
   let initialCounter = 0;
   if (savedCounter !== null) {
     initialCounter = parseInt(savedCounter);
@@ -17,38 +17,44 @@ const App: React.FC = () => {
   async function dab() {
     const newDabCounter = dabCounter + 1;
     await setDabCounter(newDabCounter);
-    await window.localStorage.setItem('dabcounter', String(newDabCounter));
+    await window.localStorage.setItem("dabcounter", String(newDabCounter));
   }
 
   async function startDabbing(e: React.SyntheticEvent) {
     await setDabbing(true);
     await dab();
-    e.preventDefault();
   }
 
   function stopDabbing(e: React.SyntheticEvent) {
     setDabbing(false);
   }
 
-  let events = {};
+  const events = {
+    onTouchStart: (e: React.SyntheticEvent) => {
+      e.preventDefault();
+      isTouching.current = true;
+      startDabbing(e);
+    },
+    onTouchEnd: (e: React.SyntheticEvent) => {
+      e.preventDefault();
+      stopDabbing(e);
+    },
+    onMouseDown: (e: React.SyntheticEvent) => {
+      e.preventDefault();
+      if (!isTouching.current) {
+        startDabbing(e);
+      }
+    },
+    onMouseUp:(e: React.SyntheticEvent) => {
+      e.preventDefault();
+      isTouching.current = false;
+      stopDabbing(e);
+    }
 
-  if ('ontouchstart' in window) {
-    events = {
-      onTouchStart: startDabbing,
-      onTouchEnd: stopDabbing
-    }
-  } else {
-    events = {
-      onMouseDown: startDabbing,
-      onMouseUp: stopDabbing
-    }
-  }
+  };
 
   return (
-    <div
-      className="App"
-      {...events}
-    >
+    <div className="App" {...events}>
       <div className="App-image-container">
         <img
           className="App-shrek-image"
